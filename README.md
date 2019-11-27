@@ -8,4 +8,4 @@ The actions which are wrapped by this skill include:<br><br>
 •	Create a Process Instance<br>
 •	Perform an Action on Tasks<br>
 •	Retrieve a Task<br><br>
-This document describes how to make use of these actions.
+User guide describes how to make use of these actions.
