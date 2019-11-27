@@ -1,0 +1,323 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<bpr:release xmlns:bpr="http://www.blueprism.co.uk/product/release">
+    <bpr:name>OracleBPM</bpr:name>
+    <bpr:release-notes>OracleBPM</bpr:release-notes>
+    <bpr:created>2019-11-27 06:05:21Z</bpr:created>
+    <bpr:package-id>7</bpr:package-id>
+    <bpr:package-name>OracleBPM</bpr:package-name>
+    <bpr:user-created-by>admin</bpr:user-created-by>
+    <bpr:contents count="2">
+        <credential id="9871cfe3-9651-4cc8-b1af-e1873760ef52" name="OracleBPM" xmlns="http://www.blueprism.co.uk/product/credential">
+            <credentialType>BasicAuthentication</credentialType>
+            <members />
+        </credential>
+        <webapiservice id="30ef96a0-0d40-496e-a9a9-f1c4afd29e1d" name="BluePrism - OracleBPM" enabled="true" xmlns="http://www.blueprism.co.uk/product/webapiservice">
+            <configuration baseurl="[baseurl]" xmlns="">
+                <actions>
+                    <action id="477" name="Retrieve a Task List" enabled="true" enableRequestOutputParameter="true" disableSendingOfRequest="false">
+                        <description><![CDATA[Lists existing tasks for the current user]]></description>
+                        <request httpmethod="GET" urlpath="/tasks?assignment=[assignment]&amp;columns=[columns]&amp;dueDateFrom=[dueDateFrom]&amp;dueDateTo=[dueDateTo]&amp;fromuser=[fromuser]&amp;groupBy=[groupBy]&amp;keyword=[keyword]&amp;limit=[limit]&amp;metadata=[metadata]&amp;offset=[offset]&amp;pattern=[pattern]&amp;priority=[priority]&amp;process=[process]&amp;showAcion=[showAcion]&amp;showPermission=[showPermission]&amp;status=[status]">
+                            <headers />
+                            <bodycontent type="0"></bodycontent>
+                        </request>
+                        <parameters>
+                            <actionparameter name="assignment" expose="true" datatype="64">
+                                <initialvalue><![CDATA[]]></initialvalue>
+                                <description><![CDATA[]]></description>
+                            </actionparameter>
+                            <actionparameter name="columns" expose="true" datatype="64">
+                                <initialvalue><![CDATA[]]></initialvalue>
+                                <description><![CDATA[]]></description>
+                            </actionparameter>
+                            <actionparameter name="dueDateFrom" expose="true" datatype="64">
+                                <initialvalue><![CDATA[]]></initialvalue>
+                                <description><![CDATA[]]></description>
+                            </actionparameter>
+                            <actionparameter name="dueDateTo" expose="true" datatype="64">
+                                <initialvalue><![CDATA[]]></initialvalue>
+                                <description><![CDATA[]]></description>
+                            </actionparameter>
+                            <actionparameter name="fromuser" expose="true" datatype="64">
+                                <initialvalue><![CDATA[]]></initialvalue>
+                                <description><![CDATA[]]></description>
+                            </actionparameter>
+                            <actionparameter name="groupBy" expose="true" datatype="64">
+                                <initialvalue><![CDATA[]]></initialvalue>
+                                <description><![CDATA[]]></description>
+                            </actionparameter>
+                            <actionparameter name="keyword" expose="true" datatype="64">
+                                <initialvalue><![CDATA[]]></initialvalue>
+                                <description><![CDATA[]]></description>
+                            </actionparameter>
+                            <actionparameter name="limit" expose="true" datatype="16">
+                                <initialvalue><![CDATA[]]></initialvalue>
+                                <description><![CDATA[]]></description>
+                            </actionparameter>
+                            <actionparameter name="metadata" expose="true" datatype="64">
+                                <initialvalue><![CDATA[]]></initialvalue>
+                                <description><![CDATA[]]></description>
+                            </actionparameter>
+                            <actionparameter name="offset" expose="true" datatype="16">
+                                <initialvalue><![CDATA[]]></initialvalue>
+                                <description><![CDATA[]]></description>
+                            </actionparameter>
+                            <actionparameter name="pattern" expose="true" datatype="64">
+                                <initialvalue><![CDATA[]]></initialvalue>
+                                <description><![CDATA[]]></description>
+                            </actionparameter>
+                            <actionparameter name="priority" expose="true" datatype="64">
+                                <initialvalue><![CDATA[]]></initialvalue>
+                                <description><![CDATA[]]></description>
+                            </actionparameter>
+                            <actionparameter name="process" expose="true" datatype="64">
+                                <initialvalue><![CDATA[]]></initialvalue>
+                                <description><![CDATA[]]></description>
+                            </actionparameter>
+                            <actionparameter name="showAcion" expose="true" datatype="8">
+                                <initialvalue><![CDATA[False]]></initialvalue>
+                                <description><![CDATA[]]></description>
+                            </actionparameter>
+                            <actionparameter name="showPermission" expose="true" datatype="8">
+                                <initialvalue><![CDATA[False]]></initialvalue>
+                                <description><![CDATA[]]></description>
+                            </actionparameter>
+                            <actionparameter name="status" expose="true" datatype="64">
+                                <initialvalue><![CDATA[]]></initialvalue>
+                                <description><![CDATA[]]></description>
+                            </actionparameter>
+                        </parameters>
+                        <outputparameters>
+                            <parameters>
+                                <customoutputparameter type="JsonPath" name="totalResult" path="$.totalResult" datatype="text"></customoutputparameter>
+                                <customoutputparameter type="JsonPath" name="user" path="$.user" datatype="collection"></customoutputparameter>
+                                <customoutputparameter type="JsonPath" name="count" path="$.count" datatype="text"></customoutputparameter>
+                                <customoutputparameter type="JsonPath" name="hasMore" path="$.hasMore" datatype="text"></customoutputparameter>
+                                <customoutputparameter type="JsonPath" name="items" path="$.items" datatype="collection"></customoutputparameter>
+                                <customoutputparameter type="JsonPath" name="links" path="$.links" datatype="collection"></customoutputparameter>
+                            </parameters>
+                            <code><![CDATA[]]></code>
+                        </outputparameters>
+                    </action>
+                    <action id="478" name="Add a Task Comment" enabled="true" enableRequestOutputParameter="true" disableSendingOfRequest="false">
+                        <description><![CDATA[Adds a comment to a task]]></description>
+                        <request httpmethod="POST" urlpath="/tasks/[id]/comments">
+                            <headers>
+                                <httpheader name="Content-Type" value="application/json" />
+                            </headers>
+                            <bodycontent type="1">
+                                <template><![CDATA[{
+    "commentStr":[commentStr]
+}]]></template>
+                            </bodycontent>
+                        </request>
+                        <parameters>
+                            <actionparameter name="id" expose="true" datatype="64">
+                                <initialvalue><![CDATA[]]></initialvalue>
+                                <description><![CDATA[]]></description>
+                            </actionparameter>
+                            <actionparameter name="commentStr" expose="true" datatype="64">
+                                <initialvalue><![CDATA[]]></initialvalue>
+                                <description><![CDATA[]]></description>
+                            </actionparameter>
+                        </parameters>
+                        <outputparameters>
+                            <parameters>
+                                <customoutputparameter type="JsonPath" name="levels" path="$.levels" datatype="text"></customoutputparameter>
+                                <customoutputparameter type="JsonPath" name="links" path="$.links" datatype="collection"></customoutputparameter>
+                                <customoutputparameter type="JsonPath" name="comment" path="$.comment" datatype="collection"></customoutputparameter>
+                            </parameters>
+                            <code><![CDATA[]]></code>
+                        </outputparameters>
+                    </action>
+                    <action id="479" name="Add a Case Comment" enabled="true" enableRequestOutputParameter="true" disableSendingOfRequest="false">
+                        <description><![CDATA[Adds a comment to a case]]></description>
+                        <request httpmethod="POST" urlpath="/cases/[id]/comments">
+                            <headers>
+                                <httpheader name="Content-Type" value="application/json" />
+                            </headers>
+                            <bodycontent type="1">
+                                <template><![CDATA[{
+    "commentStr":[commentStr]
+}]]></template>
+                            </bodycontent>
+                        </request>
+                        <parameters>
+                            <actionparameter name="id" expose="true" datatype="64">
+                                <initialvalue><![CDATA[]]></initialvalue>
+                                <description><![CDATA[]]></description>
+                            </actionparameter>
+                            <actionparameter name="commentStr" expose="true" datatype="64">
+                                <initialvalue><![CDATA[]]></initialvalue>
+                                <description><![CDATA[]]></description>
+                            </actionparameter>
+                        </parameters>
+                        <outputparameters>
+                            <parameters>
+                                <customoutputparameter type="JsonPath" name="type" path="$.type" datatype="text"></customoutputparameter>
+                                <customoutputparameter type="JsonPath" name="levels" path="$.levels" datatype="text"></customoutputparameter>
+                                <customoutputparameter type="JsonPath" name="links" path="$.links" datatype="collection"></customoutputparameter>
+                                <customoutputparameter type="JsonPath" name="comment" path="$.comment" datatype="collection"></customoutputparameter>
+                            </parameters>
+                            <code><![CDATA[]]></code>
+                        </outputparameters>
+                    </action>
+                    <action id="480" name="Create a Process Instance" enabled="true" enableRequestOutputParameter="true" disableSendingOfRequest="false">
+                        <description><![CDATA[Creates a process instance]]></description>
+                        <request httpmethod="POST" urlpath="/processes">
+                            <headers>
+                                <httpheader name="Content-Type" value="application/json" />
+                            </headers>
+                            <bodycontent type="1">
+                                <template><![CDATA[{
+    "processDefId":[processDefId],
+    "serviceName":[serviceName],
+    "operation":[operation],
+    "payload":[payload]
+}]]></template>
+                            </bodycontent>
+                        </request>
+                        <parameters>
+                            <actionparameter name="processDefId" expose="true" datatype="64">
+                                <initialvalue><![CDATA[]]></initialvalue>
+                                <description><![CDATA[]]></description>
+                            </actionparameter>
+                            <actionparameter name="serviceName" expose="true" datatype="64">
+                                <initialvalue><![CDATA[]]></initialvalue>
+                                <description><![CDATA[]]></description>
+                            </actionparameter>
+                            <actionparameter name="operation" expose="true" datatype="64">
+                                <initialvalue><![CDATA[]]></initialvalue>
+                                <description><![CDATA[]]></description>
+                            </actionparameter>
+                            <actionparameter name="payload" expose="true" datatype="64">
+                                <initialvalue><![CDATA[]]></initialvalue>
+                                <description><![CDATA[]]></description>
+                            </actionparameter>
+                        </parameters>
+                        <outputparameters>
+                            <parameters />
+                            <code><![CDATA[]]></code>
+                        </outputparameters>
+                    </action>
+                    <action id="481" name="Perform an Action on Tasks" enabled="true" enableRequestOutputParameter="true" disableSendingOfRequest="false">
+                        <description><![CDATA[Performs an action on a set of tasks defined by their IDs]]></description>
+                        <request httpmethod="PUT" urlpath="/tasks">
+                            <headers>
+                                <httpheader name="Content-Type" value="application/json" />
+                            </headers>
+                            <bodycontent type="1">
+                                <template><![CDATA[{
+    "tasks":[tasks],
+    "action":[action],
+    "comment":[comment],
+    "identities":[identities]
+}]]></template>
+                            </bodycontent>
+                        </request>
+                        <parameters>
+                            <actionparameter name="tasks" expose="true" datatype="64">
+                                <initialvalue><![CDATA[]]></initialvalue>
+                                <description><![CDATA[]]></description>
+                            </actionparameter>
+                            <actionparameter name="action" expose="true" datatype="64">
+                                <initialvalue><![CDATA[]]></initialvalue>
+                                <description><![CDATA[]]></description>
+                            </actionparameter>
+                            <actionparameter name="comment" expose="true" datatype="64">
+                                <initialvalue><![CDATA[]]></initialvalue>
+                                <description><![CDATA[]]></description>
+                            </actionparameter>
+                            <actionparameter name="identities" expose="true" datatype="64">
+                                <initialvalue><![CDATA[]]></initialvalue>
+                                <description><![CDATA[]]></description>
+                            </actionparameter>
+                        </parameters>
+                        <outputparameters>
+                            <parameters>
+                                <customoutputparameter type="JsonPath" name="totalResult" path="$.totalResult" datatype="text"></customoutputparameter>
+                                <customoutputparameter type="JsonPath" name="user" path="$.user" datatype="collection"></customoutputparameter>
+                                <customoutputparameter type="JsonPath" name="hasMore" path="$.hasMore" datatype="text"></customoutputparameter>
+                                <customoutputparameter type="JsonPath" name="items" path="$.items" datatype="collection"></customoutputparameter>
+                            </parameters>
+                            <code><![CDATA[]]></code>
+                        </outputparameters>
+                    </action>
+                    <action id="482" name="Retrieve a Task" enabled="true" enableRequestOutputParameter="true" disableSendingOfRequest="false">
+                        <description><![CDATA[Retrieves a task by task ID]]></description>
+                        <request httpmethod="GET" urlpath="/tasks/[id]?expanded=[expanded]&amp;metadata=[metadata]">
+                            <headers />
+                            <bodycontent type="0"></bodycontent>
+                        </request>
+                        <parameters>
+                            <actionparameter name="id" expose="true" datatype="64">
+                                <initialvalue><![CDATA[]]></initialvalue>
+                                <description><![CDATA[]]></description>
+                            </actionparameter>
+                            <actionparameter name="expanded" expose="true" datatype="64">
+                                <initialvalue><![CDATA[]]></initialvalue>
+                                <description><![CDATA[]]></description>
+                            </actionparameter>
+                            <actionparameter name="metadata" expose="true" datatype="64">
+                                <initialvalue><![CDATA[]]></initialvalue>
+                                <description><![CDATA[]]></description>
+                            </actionparameter>
+                        </parameters>
+                        <outputparameters>
+                            <parameters>
+                                <customoutputparameter type="JsonPath" name="updatedDate" path="$.updatedDate" datatype="text"></customoutputparameter>
+                                <customoutputparameter type="JsonPath" name="priority" path="$.priority" datatype="text"></customoutputparameter>
+                                <customoutputparameter type="JsonPath" name="startDate" path="$.startDate" datatype="text"></customoutputparameter>
+                                <customoutputparameter type="JsonPath" name="assignedDate" path="$.assignedDate" datatype="text"></customoutputparameter>
+                                <customoutputparameter type="JsonPath" name="createdDate" path="$.createdDate" datatype="text"></customoutputparameter>
+                                <customoutputparameter type="JsonPath" name="ownerUser" path="$.ownerUser" datatype="text"></customoutputparameter>
+                                <customoutputparameter type="JsonPath" name="creator" path="$.creator" datatype="text"></customoutputparameter>
+                                <customoutputparameter type="JsonPath" name="actionList" path="$.actionList" datatype="collection"></customoutputparameter>
+                                <customoutputparameter type="JsonPath" name="number" path="$.number" datatype="text"></customoutputparameter>
+                                <customoutputparameter type="JsonPath" name="links" path="$.links" datatype="collection"></customoutputparameter>
+                                <customoutputparameter type="JsonPath" name="hasSubTasks" path="$.hasSubTasks" datatype="text"></customoutputparameter>
+                                <customoutputparameter type="JsonPath" name="title" path="$.title" datatype="text"></customoutputparameter>
+                                <customoutputparameter type="JsonPath" name="history" path="$.history" datatype="collection"></customoutputparameter>
+                                <customoutputparameter type="JsonPath" name="type" path="$.type" datatype="text"></customoutputparameter>
+                                <customoutputparameter type="JsonPath" name="comments" path="$.comments" datatype="collection"></customoutputparameter>
+                                <customoutputparameter type="JsonPath" name="dueDate" path="$.dueDate" datatype="text"></customoutputparameter>
+                                <customoutputparameter type="JsonPath" name="payload" path="$.payload" datatype="collection"></customoutputparameter>
+                                <customoutputparameter type="JsonPath" name="attachments" path="$.attachments" datatype="text"></customoutputparameter>
+                            </parameters>
+                            <code><![CDATA[]]></code>
+                        </outputparameters>
+                    </action>
+                </actions>
+                <commonparameters>
+                    <actionparameter name="baseurl" expose="true" datatype="64">
+                        <initialvalue><![CDATA[http://localhost:7101/bpm/services/rest]]></initialvalue>
+                        <description><![CDATA[]]></description>
+                    </actionparameter>
+                </commonparameters>
+                <commonheaders />
+                <commonauthentications>
+                    <authentication type="1" preemptive="false">
+                        <credential credentialname="OracleBPM" exposetoprocess="true" inputparametername="Basic Authentication Credential Name" />
+                    </authentication>
+                </commonauthentications>
+                <commoncode>
+                    <codeproperties code="" language="visualbasic">
+                        <namespaces>
+                            <namespace>System</namespace>
+                            <namespace>System.Drawing</namespace>
+                            <namespace>System.Data</namespace>
+                        </namespaces>
+                        <references>
+                            <reference>System.dll</reference>
+                            <reference>System.Data.dll</reference>
+                            <reference>System.Xml.dll</reference>
+                            <reference>System.Drawing.dll</reference>
+                        </references>
+                    </codeproperties>
+                </commoncode>
+                <configurationsettings>
+                    <configurationsettings requesttimeout="10" authserverrequesttimeout="10" />
+                </configurationsettings>
+            </configuration>
+        </webapiservice>
+    </bpr:contents>
+</bpr:release>
